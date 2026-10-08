@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>FLOAT - Создание сайтов: HTML, CSS, PHP, MySql</title>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            padding: 20px;
+            background-color: #ffffff;
+            font-size: 18px;
+            line-height: 1.4;
+        }
+
+        p {
+            max-width: 600px;
+            text-align: justify;
+        }
+
+        /* Стиль для буквицы в виде плавающего блока */
+        .dropcap {
+            float: left;                /* Делаем блок плавающим слева */
+            font-size: 45px;            /* Крупный размер буквы */
+            line-height: 40px;          /* Корректируем высоту строки буквы */
+            color: #cc0033;             /* Красный цвет буквы */
+            border: 1px solid #cc0033;  /* Красная рамка вокруг */
+            padding: 5px 8px;           /* Внутренние отступы до рамки */
+            margin-right: 8px;          /* Отступ справа, чтобы текст не прилипал */
+            margin-top: 5px;            /* Небольшое смещение вниз */
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <p>
+        <span class="dropcap">В</span> прошлой лекции мы узнали, что по умолчанию 
+        блочные элементы идут строго друг под другом. Изменить этот порядок можно 
+        сделав элементы плавающими. Для этого в CSS служит свойство float...
+    </p>
+
+</body>
+</html>

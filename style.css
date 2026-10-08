@@ -1,0 +1,32 @@
+body {
+    font-size: 18px;
+    background-color: #f4f4f4;
+    border: 5px solid #333333;
+    padding: 20px;
+    margin: 0;
+}
+
+.internal-link {
+    color: #0066cc; 
+    text-decoration: none; 
+    font-weight: bold; 
+}
+
+.internal-link:hover {
+    text-decoration: underline; 
+    color: #004499;
+}
+
+.external-link {
+    color: #cc3300; 
+    text-decoration: underline; 
+}
+
+.external-link:hover {
+    color: #ff5500;
+    text-decoration: none; 
+}
+
+.border-all * {
+    border: 1px solid red;
+}

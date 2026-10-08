@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>y=x²</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background-color: #ffffff;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        /* Задание б) Эффект морской волны (Относительное позиционирование)*/
+        .wave-text {
+            font-size: 24px;
+            font-family: "Courier New", Courier, monospace;
+            margin-bottom: 50px;
+        }
+
+        /* Каждая буква смещается по вертикали с помощью top/bottom относительно своей строки */
+        .wave-text span {
+            position: relative;
+        }
+        .up-1 { top: -8px; }
+        .up-2 { top: -4px; }
+        .dn-1 { top: 4px; }
+        .dn-2 { top: 8px; }
+
+
+        /*Задание в*) Точечный график функции y=x² (Абсолютное позиционирование) */
+        /* Контейнер графика служит точкой отсчета (position: relative) */
+        .graph-container {
+            position: relative;
+            width: 400px;
+            height: 300px;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+
+        /* Ось X */
+        .axis-x {
+            position: absolute;
+            left: 20px;
+            bottom: 30px;
+            width: 360px;
+            height: 1px;
+            background-color: black;
+        }
+        /* Стрелочка и подпись оси X */
+        .axis-x::after {
+            content: "➔ X";
+            position: absolute;
+            right: -10px;
+            top: -9px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* Ось Y */
+        .axis-y {
+            position: absolute;
+            left: 200px; /* Центр по горизонтали */
+            top: 20px;
+            width: 1px;
+            height: 250px;
+            background-color: black;
+        }
+        /* Стрелочка оси Y */
+        .axis-y::before {
+            content: "▲";
+            position: absolute;
+            top: -10px;
+            left: -5px;
+            font-size: 10px;
+        }
+
+        /* Общий стиль для каждой точки графика */
+        .dot {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: black;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Реализация задания б) -->
+    <h2>б) Эффект морской волны (position: relative)</h2>
+    <div class="wave-text">
+        <span class="up-1">М</span><span>о</span><span class="dn-1">р</span><span class="dn-2">е</span> 
+        <span>в</span><span class="up-1">о</span><span class="up-2">л</span><span>н</span><span class="dn-1">у</span><span class="dn-2">е</span><span class="dn-1">т</span><span>с</span><span class="up-1">я</span> 
+        <span class="up-2">р</span><span>а</span><span class="dn-1">з</span><span class="dn-2">!</span>
+    </div>
+
+    <hr>
+
+    <!-- Реализация задания в*) -->
+    <h2>в*) Точечный график функции y = x² (position: absolute)</h2>
+    <div class="graph-container">
+        <!-- Оси координат -->
+        <div class="axis-x"></div>
+        <div class="axis-y"></div>
+
+        <!-- Точки параболы y = x² 
+             Центр координат (0,0) находится в точке (left: 200px; bottom: 30px).
+             Каждая точка рассчитана как: 
+             left = 200 + x_пиксели
+             bottom = 30 + (x_значение * x_значение) / делитель
+        -->
+        <!-- Центр (0,0) -->
+        <div class="dot" style="left: 200px; bottom: 30px;"></div>
+        
+        <!-- Правое крыло параболы -->
+        <div class="dot" style="left: 210px; bottom: 33px;"></div>
+        <div class="dot" style="left: 220px; bottom: 42px;"></div>
+        <div class="dot" style="left: 235px; bottom: 57px;"></div>
+        <div class="dot" style="left: 250px; bottom: 80px;"></div>
+        <div class="dot" style="left: 265px; bottom: 112px;"></div>
+        <div class="dot" style="left: 280px; bottom: 152px;"></div>
+        <div class="dot" style="left: 295px; bottom: 202px;"></div>
+        <div class="dot" style="left: 310px; bottom: 261px;"></div>
+
+        <!-- Левое крыло параболы (зеркальное отражение) -->
+        <div class="dot" style="left: 190px; bottom: 33px;"></div>
+        <div class="dot" style="left: 180px; bottom: 42px;"></div>
+        <div class="dot" style="left: 165px; bottom: 57px;"></div>
+        <div class="dot" style="left: 150px; bottom: 80px;"></div>
+        <div class="dot" style="left: 135px; bottom: 112px;"></div>
+        <div class="dot" style="left: 120px; bottom: 152px;"></div>
+        <div class="dot" style="left: 105px; bottom: 202px;"></div>
+        <div class="dot" style="left: 90px; bottom: 261px;"></div>
+    </div>
+
+</body>
+</html>

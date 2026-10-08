@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Пример - Модификация меню и строчные элементы</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background-color: #ffffff;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        /* --- База для задания г*) Вертикальное меню (Рис. 3.23) --- */
+        .menu-table {
+            border-collapse: collapse;
+            width: 220px;
+            border: 1px solid #333333;
+        }
+
+        /* Обычное состояние строк меню */
+        .menu-table tr {
+            background-color: #7293a6; /* Серо-голубой исходный цвет блоков меню */
+            height: 45px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        /* Тонкая разделительная граница между пунктами */
+        .menu-table td {
+            border-bottom: 1px solid #333333;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .menu-table tr:last-child td {
+            border-bottom: none; /* Убираем нижнюю рамку у последнего пункта */
+        }
+
+        /* Стилизация ссылок внутри таблицы */
+        .menu-table a {
+            display: block;
+            width: 100%;
+            line-height: 45px;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        /* Эффект выделения пункта меню цветом при наведении курсора (:hover для строки) */
+        .menu-table tr:hover {
+            background-color: #8a6d9f; /* Фиолетовый оттенок при наведении, как на рис. 3.23 */
+        }
+
+
+        /* --- Дополнительно: Демонстрация Рис. 3.17 (Строчные элементы) --- */
+        .inline-example {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 18px;
+            margin-top: 20px;
+            line-height: 2;
+        }
+
+        /* Различные стили для строчных тегов SPAN внутри одного абзаца */
+        .span-bg {
+            background-color: #dcdcdc; /* Серый фон под текстом */
+            padding: 2px 5px;
+        }
+
+        .span-lowered {
+            vertical-align: sub; /* Смещение текста чуть ниже строки */
+            font-size: 14px;
+        }
+
+        .span-italic {
+            font-style: italic; /* Курсивный текст */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Реализация интерактивной таблицы-меню с рисунка 3.23 -->
+    <h2>г*) Реализация меню на таблице (Рис. 3.23)</h2>
+    <table class="menu-table">
+        <tr>
+            <td><a href="#main">Главная</a></td>
+        </tr>
+        <tr>
+            <td><a href="#hobby">Мое хобби</a></td>
+        </tr>
+        <tr>
+            <td><a href="#album">Фотоальбом</a></td>
+        </tr>
+    </table>
+
+    <hr style="margin-top: 40px; border: 0; border-top: 1px solid #ccc;">
+
+    <!-- Воспроизведение текстового поведения с рисунка 3.17 -->
+    <h2>Пример поведения строчных элементов (Рис. 3.17)</h2>
+    <p class="inline-example">
+        <span class="span-bg">Строчные элементы</span> 
+        <span class="span-lowered">располагаются</span> 
+        <span class="span-italic">в строке и идут</span> 
+        друг за другом.
+    </p>
+
+</body>
+</html>
