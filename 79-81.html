@@ -60,13 +60,17 @@
         /* Выделение первой буквы первого абзаца статьи */
         .article::first-letter {
             font-family: "Georgia", serif;
-            font-size: 45px;
+            font-size: 45px;            /* Крупный размер буквы */
             font-weight: bold;
             color: #ff7f00;
-            float: left;            /* Обтекание текстом */
-            margin-right: 8px;
-            line-height: 40px;
             text-shadow: 2px 2px 0px #8bb4f7;
+            
+            /* ГЛАВНЫЕ ИЗМЕНЕНИЯ ТУТ: */
+            /* Убрали float: left полностью! */
+            
+            line-height: 1;             /* Сбрасываем высоту строки для буквицы */
+            vertical-align: 0;     /* Ровняем нижний край буквы с базовой линией строки */
+            margin-right: 2px;          /* Небольшой аккуратный отступ до следующей буквы */
         }
 
 
