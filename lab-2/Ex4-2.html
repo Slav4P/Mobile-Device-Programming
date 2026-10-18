@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<script>
+    var correctPassword = "123"; 
+
+    var userPassword = prompt("Введите пароль для доступа:", "");
+
+    if (userPassword === correctPassword) {
+        document.write("<h1>Доступ разрешен</h1>");
+        document.write("<p style='color: green;'>Пароль верен. Добро пожаловать в систему!</p>");
+    } else {
+        document.write("<h1>Доступ заблокирован</h1>");
+        document.write("<p style='color: red;'>Введен неправильный пароль. Доступ ограничен.</p>");
+    }
+</script>
+</body>
+</html>

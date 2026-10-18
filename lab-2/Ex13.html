@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        img {
+            transition: all 0.3s ease; 
+            cursor: pointer;
+        }
+    </style>
+    
+    <script>
+        function zoomIn() {
+            // Находим картинку по её уникальному идентификатору 
+            var image = document.getElementById("myImage");
+            
+            image.style.width = "450px";
+            image.style.height = "300px";
+        }
+
+        // Функция для уменьшения картинки до исходного размера
+        function zoomOut() {
+            var image = document.getElementById("myImage");
+            
+            image.style.width = "300px";
+            image.style.height = "200px";
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Взаимодействие с картинкой через MouseOver и MouseOut</h1>
+    <hr>
+    
+    <img id="myImage" 
+         src="images.jpg" 
+         alt="Пример картинки" 
+         width="300" 
+         height="200" 
+         onmouseover="zoomIn()" 
+         onmouseout="zoomOut()">
+
+    <p>Наведите курсор мыши на изображение, чтобы увеличить его. Уберите курсор — и оно уменьшится.</p>
+
+</body>
+</html>

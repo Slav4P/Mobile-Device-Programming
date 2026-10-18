@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Лесенка из линий</h1>
+    
+    <script>
+        var lineWidth = 10;
+
+        function line() {
+            document.writeln("<hr align='center' width='" + lineWidth + "'>");
+        }
+
+        for (var i = 1; i <= 10; i++) {
+            line(); 
+            
+            lineWidth = lineWidth + 10; 
+        }
+    </script>
+</body>
+</html>
+

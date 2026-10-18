@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        form {
+            font-family: Arial, sans-serif;
+            line-height: 2;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        textarea {
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="feedbackForm" onsubmit="return validateForm()">
+        <div class="form-group">
+            Ваше имя: * <input type="text" id="username">
+        </div>
+        
+        <div class="form-group">
+            Пароль * <input type="password" id="password">
+        </div>
+        
+        <div class="form-group">
+            Подтверждение пароля * <input type="password" id="confirmPassword">
+        </div>
+        
+        <div class="form-group">
+            Электронный адрес: * <input type="text" id="email">
+        </div>
+        
+        <div class="form-group">
+            Тема сообщения: <input type="text" id="subject">
+        </div>
+        
+        <div class="form-group">
+            Сообщение: <textarea id="message" rows="4" cols="25"></textarea>
+        </div>
+        
+        <div>
+            <input type="submit" value="Отправить">
+            <input type="reset" value="Очистить">
+        </div>
+        
+        <p><small>* - необходимые для заполнения поля</small></p>
+    </form>
+
+    <script>
+        function validateForm() {
+  
+            var usernameField = document.getElementById("username");
+            var passwordField = document.getElementById("password");
+            var confirmField = document.getElementById("confirmPassword");
+            var emailField = document.getElementById("email");
+            var messageField = document.getElementById("message");
+
+            var username = usernameField.value.trim();
+            var password = passwordField.value;
+            var confirmPassword = confirmField.value;
+            var email = emailField.value.trim();
+            var message = messageField.value.trim();
+
+
+            if (username.length === 0) {
+                alert("Ошибка: Заполните поле имени!");
+                usernameField.focus();
+                return false; 
+            }
+
+  
+            if (password.length <= 4) {
+                alert("Ошибка: Пароль должен содержать больше 4-х символов!");
+                passwordField.focus();
+                return false;
+            }
+
+
+            if (password !== confirmPassword) {
+                alert("Ошибка: Введенные пароли не совпадают!");
+                confirmField.focus();
+                return false;
+            }
+
+            if (email.length === 0) {
+                alert("Ошибка: Заполните поле электронного адреса!");
+                emailField.focus();
+                return false;
+            }
+            if (email.indexOf("@") === -1) {
+                alert("Ошибка: Электронный адрес должен содержать символ '@'!");
+                emailField.focus();
+                return false;
+            }
+
+            if (message.length <= 10) {
+                alert("Ошибка: Сообщение обязательно для заполнения и должно содержать больше 10 символов!");
+                messageField.focus();
+                return false;
+            }
+            
+            alert("Форма успешно заполнена и готова к отправке!");
+            return true; 
+        }
+    </script>
+
+</body>
+</html>

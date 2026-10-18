@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <script>
+        // Запрашиваем имя пользователя 
+        let userName = window.prompt("Введите сюда своё имя", "Введите имя");
+
+        if (!userName) {
+            userName = "Незнакомец";
+        }
+
+        document.write("<p>Ваше имя &lt;" + userName + "&gt;</p>");
+
+        // "Начать заново?"
+        let startAgain = window.confirm("Начать заново?");
+
+        if (startAgain) {
+            window.alert("Не надоело?");
+        } else {
+            window.alert("Ну и правильно!");
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .layer {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            color: white;
+            font-family: sans-serif;
+            font-size: 20px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        #blueBox {
+            background-color: blue;
+            top: 150px;
+            left: 400px;
+            z-index: 1; /* Самый маленький приоритет */
+        }
+
+        #movingImage {
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            top: 140px;
+            left: -200px; 
+            z-index: 2;   /* Находится НАД синим, но ПОД красным */
+        }
+
+        #redBox {
+            background-color: red;
+            top: 150px;
+            left: 200px;
+            z-index: 3; /* Самый высокий приоритет */
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body onload="startAnimation()">
+
+    <h1>Абсолютное позиционирование и Z-index</h1>
+    <hr>
+
+    <div id="blueBox" class="layer">Это дальше</div>
+
+
+    <img id="movingImage" src="images.jpg" alt="Проплывающая картинка">
+
+    <div id="redBox" class="layer">Это ближе</div>
+
+    <script>
+        function startAnimation() {
+            var img = document.getElementById("movingImage");
+            var currentLeft = parseInt(img.style.left) || -200;
+
+
+            if (currentLeft < window.innerWidth) {
+                img.style.left = (currentLeft + 3) + "px"; 
+                
+                // 20 миллисекунд для плавности
+                setTimeout(startAnimation, 20);
+            } else {
+                // возвращаем её в начало
+                img.style.left = "-200px";
+                setTimeout(startAnimation, 1000); // Повторить через 1 секунду
+            }
+        }
+    </script>
+
+</body>
+</html>

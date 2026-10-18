@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function moveTxt() {
+            var element = document.getElementById("anim");
+            
+            // Получаем текущие координаты 
+            var currentTop = parseInt(element.style.top) || 0;
+            var currentLeft = parseInt(element.style.left) || 0;
+
+            if (currentTop < 300) {
+                element.style.top = (currentTop + 2) + "px";    // Увеличиваем top (движение ВНИЗ)
+                element.style.left = (currentLeft + 3) + "px";  // Уменьшаем left (движение ВЛЕВО)
+
+                // Вызываем функцию заново через каждые 50 миллисекунд
+                setTimeout(moveTxt, 50);
+            }
+        }
+    </script>
+</head>
+<body onload="moveTxt()">
+    <div id="anim" style="position: absolute; left: 100%; top: 10px; font-weight: bold; font-size: 18px;">
+        Текст, шагом марш!
+    </div>
+
+</body>
+</html>
